@@ -7,7 +7,9 @@
 
 	<!-- Stylesheets
 	============================================= -->
-	<link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,400i|Playfair+Display:400,400i,700|Lato:300,400,700|Nothing+You+Could+Do" rel="stylesheet" type="text/css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i|Playfair+Display:400,400i,700|Lato:300,400,700|Nothing+You+Could+Do&amp;display=swap" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
 	<link rel="stylesheet" href="style.css" type="text/css" />
 	<link rel="stylesheet" href="css/dark.css" type="text/css" />
@@ -94,7 +96,7 @@
 						<!-- SLIDE  -->
 						<li data-index="rs-689" data-transition="fadethroughdark" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="2000" data-thumb="include/rs-plugin/demos/assets/images/creative_bg1-100x50.jpg" data-rotate="0" data-saveperformance="off" data-title="Quality" data-param1="01" data-description="">
 							<!-- MAIN IMAGE -->
-							<img src="demos/cafe/images/sections/slider.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="3" class="rev-slidebg" data-no-retina>
+							<img src="demos/cafe/images/sections/slider.webp" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="3" class="rev-slidebg" data-no-retina>
 							<!-- LAYERS -->
 
 							<!-- LAYER NR. 1 -->
@@ -176,7 +178,7 @@
 
 				<!-- Modal -->
 				<div class="modal1 mfp-hide subscribe-widget" id="myModal1">
-					<div class="block dark divcenter" style="background: url('demos/cafe/images/others/modal.jpg') no-repeat; background-size: cover; max-width: 700px; box-shadow: 0px 0px 20px #000" data-height-xl="400">
+					<div class="block dark divcenter" style="background: url('demos/cafe/images/others/modal.webp') no-repeat; background-size: cover; max-width: 700px; box-shadow: 0px 0px 20px #000" data-height-xl="400">
 						<div style="padding: 40px;">
 							<div class="widget-subscribe-form-result"></div>
 							<form class="widget-subscribe-form2" action="include/subscribe.php" role="form" method="post" style="max-width: 400px; margin-top: 130px;">
@@ -188,7 +190,7 @@
 				</div>
 
 				<!-- 1 : #section-about -->
-				<section id="section-about" class="page-section section center nobottommargin dark" style="background: url('demos/cafe/images/sections/1.jpg') no-repeat center center; background-size: cover">
+				<section id="section-about" class="page-section section center nobottommargin dark" data-lazy-bg="demos/cafe/images/sections/1.webp" style="background: no-repeat center center; background-size: cover">
 
 					<div class="container clearfix">
 						<div class="row">
@@ -214,7 +216,7 @@
 				</section> <!-- .section end -->
 
 				<!-- 2 : #section-services -->
-				<section id="section-services" class="page-section section dark" style="background: url('demos/cafe/images/sections/2.jpg') no-repeat center center; background-size: cover">
+				<section id="section-services" class="page-section section dark" data-lazy-bg="demos/cafe/images/sections/2.webp" style="background: no-repeat center center; background-size: cover">
 
 					<div class="container clearfix">
 						<div class="heading-block center nobottomborder">
@@ -270,7 +272,7 @@
 				</section> <!-- .section end -->
 
 				<!-- 3 : #section-testimonials -->
-				<section id="section-testimonials" class="page-section section dark" style="background: url('demos/cafe/images/sections/8.jpg') no-repeat center center; background-size: cover; padding: 100px 0;">
+				<section id="section-testimonials" class="page-section section dark" data-lazy-bg="demos/cafe/images/sections/8.webp" style="background: no-repeat center center; background-size: cover; padding: 100px 0;">
 
 					<div class="container clearfix">
 						<div class="row clearfix">
@@ -324,7 +326,7 @@
 				</section> <!-- .section end -->
 
 				<!-- 4 : #section-menu -->
-				<section id="section-menu" class="page-section section dark" style="background: url('demos/cafe/images/sections/4.jpg') no-repeat center center; background-size: cover;">
+				<section id="section-menu" class="page-section section dark" data-lazy-bg="demos/cafe/images/sections/4.webp" style="background: no-repeat center center; background-size: cover;">
 
 					<div class="container clearfix">
 
@@ -418,7 +420,7 @@
 				</section> <!-- .section end -->
 
 				<!-- 5 : #section-contact -->
-				<section id="section-contact" class="page-section section dark nomargin" style="background: url('demos/cafe/images/sections/7.jpg') no-repeat center center; background-size: cover;">
+				<section id="section-contact" class="page-section section dark nomargin" data-lazy-bg="demos/cafe/images/sections/7.webp" style="background: no-repeat center center; background-size: cover;">
 
 					<div class="container clearfix">
 
@@ -488,7 +490,7 @@
 
 			<!-- Copyrights
 			============================================= -->
-			<div id="copyrights" class="center notoppadding" style="background: url('demos/cafe/images/sections/6.jpg') no-repeat center center; background-size: cover;">
+			<div id="copyrights" class="center notoppadding" data-lazy-bg="demos/cafe/images/sections/6.webp" style="background: no-repeat center center; background-size: cover;">
 				<div class="container clearfix">
 					<div class="row">
 						<div class="col-lg-12 center">
@@ -508,6 +510,33 @@
 	<!-- Go To Top
 	============================================= -->
 	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- Lazy section backgrounds
+	The section background photos are far below the hero. Fetch each one when its section is within
+	1200px of the viewport instead of holding up the page load. Without JS they are applied at once.
+	============================================= -->
+	<script>
+		(function() {
+			var sections = document.querySelectorAll('[data-lazy-bg]');
+			function apply(el) {
+				el.style.backgroundImage = "url('" + el.getAttribute('data-lazy-bg') + "')";
+				el.removeAttribute('data-lazy-bg');
+			}
+			if (!('IntersectionObserver' in window)) {
+				Array.prototype.forEach.call(sections, apply);
+				return;
+			}
+			var observer = new IntersectionObserver(function(entries) {
+				entries.forEach(function(entry) {
+					if (entry.isIntersecting) {
+						observer.unobserve(entry.target);
+						apply(entry.target);
+					}
+				});
+			}, { rootMargin: '1200px 0px' });
+			Array.prototype.forEach.call(sections, function(el) { observer.observe(el); });
+		})();
+	</script>
 
 	<!-- External JavaScripts
 	============================================= -->
